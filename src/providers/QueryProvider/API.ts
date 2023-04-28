@@ -3,8 +3,12 @@ import axios from 'axios'
 const instance = axios.create({
   baseURL: process.env.REACT_APP_NASDAQ_DATA_LINK_URL,
   timeout: 4000,
+  withCredentials: false,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true'
   },
 })
 
